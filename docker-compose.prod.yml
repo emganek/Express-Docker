@@ -1,0 +1,14 @@
+version: '3'
+services:
+  express-app:
+    build: 
+      args:
+        - APP_ENV=production
+      context: .
+    command: node index.js
+    env_file:
+      - .env.prod
+
+  mongo-db:
+    env_file:
+      - .env.prod
